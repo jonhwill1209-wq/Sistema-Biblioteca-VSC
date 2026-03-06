@@ -13,7 +13,11 @@ namespace BibliotecaApp
 {
     public partial class Form1 : Form
     {
+        // El Diccionario para búsquedas rápidas por ID
         Dictionary<int, Usuario> registroUsuarios = new Dictionary<int, Usuario>();
+
+        int[,] contadorRegistros = new int[1, 1];
+
         public Form1()
         {
             InitializeComponent();
@@ -53,6 +57,36 @@ namespace BibliotecaApp
             catch (Exception ex)
             {
                 MessageBox.Show("Error: Asegúrate de ingresar un ID numérico válido.");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Obtener el ID que el usuario escribió para buscar
+                int idABuscar = int.Parse(txtId.Text);
+
+                // 2. Verificar si el ID existe en el Diccionario
+                if (registroUsuarios.ContainsKey(idABuscar))
+                {
+                    // 3. Extraer el objeto Usuario del Diccionario usando su llave
+                    Usuario usuarioEncontrado = registroUsuarios[idABuscar];
+
+                    // 4. Mostrar el resultado en el cuadro de Nombre
+                    txtNombre.Text = usuarioEncontrado.Nombre;
+
+                    MessageBox.Show("¡Usuario encontrado!");
+                }
+                else
+                {
+                    MessageBox.Show("El ID " + idABuscar + " no existe en el registro.");
+                    txtNombre.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ingresa un ID numérico para buscar: " + ex.Message);
             }
         }
     }

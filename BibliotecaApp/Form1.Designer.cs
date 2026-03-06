@@ -36,6 +36,7 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnRegistrar.Location = new System.Drawing.Point(216, 54);
+            this.btnRegistrar.Location = new System.Drawing.Point(15, 69);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(161, 43);
             this.btnRegistrar.TabIndex = 4;
@@ -110,11 +111,23 @@
             this.colNombre.Name = "colNombre";
             this.colNombre.Width = 125;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBuscar.Location = new System.Drawing.Point(241, 69);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(109, 43);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar por ID";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtNombre);
@@ -139,6 +152,7 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 
