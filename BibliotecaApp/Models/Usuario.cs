@@ -9,10 +9,10 @@ namespace BibliotecaApp.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
 
-        // Requerimiento: Uso de Listas para el historial
+        // Uso de Listas para el historial
         public List<string> LibrosPrestados { get; set; }
 
-        // ESTE ES EL CONSTRUCTOR QUE TE FALTABA (con 2 argumentos)
+        // CONSTRUCTOR  (con 2 argumentos)
         public Usuario(int id, string nombre)
         {
             Id = id;
