@@ -52,6 +52,13 @@ namespace BibliotecaApp
                 txtNombre.Clear();
                 txtId.Focus();
 
+                // Incrementamos el valor en la posición [0,0] de la matriz
+                contadorRegistros[0, 0] = contadorRegistros[0, 0] + 1;
+
+                // Mostramos el total acumulado en la matriz para probar
+                // MessageBox.Show("Total de registros en matriz: " + contadorRegistros[0, 0]);
+                lblTotal.Text = "Registros totales: " + contadorRegistros[0, 0];
+
                 MessageBox.Show("Estudiante registrado con éxito.");
             }
             catch (Exception ex)
@@ -87,6 +94,50 @@ namespace BibliotecaApp
             catch (Exception ex)
             {
                 MessageBox.Show("Ingresa un ID numérico para buscar: " + ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 1. Obtenemos el ID que el usuario quiere borrar
+                int idAEliminar = int.Parse(txtId.Text);
+
+                // 2. Verificamos si ese ID existe en el Diccionario
+                if (registroUsuarios.ContainsKey(idAEliminar))
+                {
+                    // 3. Lo borramos del Diccionario (Requerimiento técnico)
+                    registroUsuarios.Remove(idAEliminar);
+
+                    // 4. Lo buscamos y borramos de la Tabla (DataGridView)
+                    foreach (DataGridViewRow fila in dgvUsuarios.Rows)
+                    {
+                        if (fila.Cells["colId"].Value != null && (int)fila.Cells["colId"].Value == idAEliminar)
+                        {
+                            dgvUsuarios.Rows.Remove(fila);
+                            break; // Salimos del ciclo al encontrarlo
+                        }
+                    }
+
+                    // 5. Restamos 1 a nuestra Matriz de estadísticas
+                    contadorRegistros[0, 0]--;
+
+                    lblTotal.Text = "Registros totales: " + contadorRegistros[0, 0];
+
+
+                    MessageBox.Show("Usuario eliminado. Total actual en matriz: " + contadorRegistros[0, 0]);
+                    txtId.Clear();
+                    txtNombre.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún usuario con el ID: " + idAEliminar);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar: " + ex.Message);
             }
         }
     }
