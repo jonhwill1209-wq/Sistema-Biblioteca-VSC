@@ -1,12 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BibliotecaApp.Models
+﻿namespace BibliotecaApp.Models
 {
-    internal class Libro
+    public class Libro : Recurso
     {
+        public string Autor { get; set; }
+
+        public Libro(int id, string titulo, string autor) : base(id, titulo)
+        {
+            Autor = autor;
+        }
+
+        // Implementación del Polimorfismo
+        public override string ObtenerTipo()
+        {
+            return "Libro Físico";
+        }
     }
 }
