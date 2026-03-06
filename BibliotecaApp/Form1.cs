@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace BibliotecaApp
 {
     public partial class Form1 : Form
     {
+        Dictionary<int, Usuario> registroUsuarios = new Dictionary<int, Usuario>();
         public Form1()
         {
             InitializeComponent();
