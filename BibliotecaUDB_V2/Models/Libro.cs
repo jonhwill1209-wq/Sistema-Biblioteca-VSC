@@ -1,18 +1,20 @@
-﻿namespace BibliotecaApp.Models
+﻿namespace BibliotecaUDB_V2.Models
 {
-    public class Libro : Recurso
+    public class Libro
     {
+        public int Id { get; set; } // Asegúrate que sea Id, no ISBN
+        public string Titulo { get; set; }
         public string Autor { get; set; }
+        public int Anio { get; set; }
+        public bool EstaPrestado { get; set; } // Agregamos esto para el control de disponibilidad
 
-        public Libro(int id, string titulo, string autor) : base(id, titulo)
+        public Libro(int id, string titulo, string autor, int anio)
         {
+            Id = id;
+            Titulo = titulo;
             Autor = autor;
-        }
-
-        // Implementación del Polimorfismo
-        public override string ObtenerTipo()
-        {
-            return "Libro Físico";
+            Anio = anio;
+            EstaPrestado = false; // Por defecto inicia disponible
         }
     }
 }

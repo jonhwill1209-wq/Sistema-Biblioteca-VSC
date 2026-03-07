@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnDocumentacion = new System.Windows.Forms.Button();
@@ -131,35 +131,34 @@
             // 
             // chartUsuariosActivos
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend1);
             this.chartUsuariosActivos.Location = new System.Drawing.Point(499, 217);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series1);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(255, 187);
             this.chartUsuariosActivos.TabIndex = 5;
             this.chartUsuariosActivos.Text = "chart2";
-            this.chartUsuariosActivos.Click += new System.EventHandler(this.chartUsuariosActivos_Click);
             // 
             // chartLibrosMasPrestados
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartLibrosMasPrestados.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartLibrosMasPrestados.Legends.Add(legend2);
             this.chartLibrosMasPrestados.Location = new System.Drawing.Point(499, 25);
             this.chartLibrosMasPrestados.Name = "chartLibrosMasPrestados";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartLibrosMasPrestados.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartLibrosMasPrestados.Series.Add(series2);
             this.chartLibrosMasPrestados.Size = new System.Drawing.Size(249, 186);
             this.chartLibrosMasPrestados.TabIndex = 4;
             this.chartLibrosMasPrestados.Text = "chart1";
@@ -190,6 +189,7 @@
             this.btnAnadirLibro.TabIndex = 1;
             this.btnAnadirLibro.Text = "Añadir";
             this.btnAnadirLibro.UseVisualStyleBackColor = true;
+            this.btnAnadirLibro.Click += new System.EventHandler(this.btnAnadirLibro_Click);
             // 
             // groupBox1
             // 
@@ -333,7 +333,6 @@
             this.grpOperaciones.TabIndex = 4;
             this.grpOperaciones.TabStop = false;
             this.grpOperaciones.Text = "Gestion de Préstamos";
-            this.grpOperaciones.Enter += new System.EventHandler(this.grpOperaciones_Enter);
             // 
             // dgvPrestamosActivos
             // 
@@ -441,6 +440,7 @@
             this.btnAnadirUsuario.TabIndex = 1;
             this.btnAnadirUsuario.Text = "Añadir";
             this.btnAnadirUsuario.UseVisualStyleBackColor = true;
+            this.btnAnadirUsuario.Click += new System.EventHandler(this.btnAnadirUsuario_Click);
             // 
             // grpGEstionUsuarios
             // 
