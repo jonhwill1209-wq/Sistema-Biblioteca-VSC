@@ -7,11 +7,13 @@ namespace BibliotecaUDB_V2
 {
     public partial class Form1 : Form
     {
-        // Diccionarios para cumplir con la UDB
+        // ================================================================
+        // 1. VARIABLES GLOBALES Y DICCIONARIOS (Requerimiento UDB)
+        // ================================================================
         Dictionary<int, Libro> inventarioLibros = new Dictionary<int, Libro>();
         Dictionary<int, Usuario> registroUsuarios = new Dictionary<int, Usuario>();
 
-        // Matriz para las estadísticas (Gráficas)
+        // Matriz para las estadísticas (Gráficas - Pendiente de implementar)
         int[,] matrizEstadisticas = new int[2, 100];
 
         public Form1()
@@ -19,20 +21,27 @@ namespace BibliotecaUDB_V2
             InitializeComponent();
         }
 
-        // --- MÉTODOS DE APOYO ---
+        // ================================================================
+        // 2. MÉTODOS DE APOYO (Actualización visual)
+        // ================================================================
         private void ActualizarTablas()
         {
+            // Refrescar tabla de Libros
             dgvLibros.Rows.Clear();
             foreach (var l in inventarioLibros.Values)
+            {
                 dgvLibros.Rows.Add(l.Id, l.Titulo, l.Autor, l.Anio);
+            }
 
+            // Refrescar tabla de Usuarios
             dgvUsuarios.Rows.Clear();
             foreach (var u in registroUsuarios.Values)
+            {
                 dgvUsuarios.Rows.Add(u.Id, u.Nombre, u.Correo);
+            }
         }
 
-
-            private void ActualizarGraficaLibros()
+        private void ActualizarGraficaLibros()
         {
             chartLibrosMasPrestados.Series.Clear();
             var serie = chartLibrosMasPrestados.Series.Add("Préstamos");
@@ -40,142 +49,158 @@ namespace BibliotecaUDB_V2
 
             foreach (var libro in inventarioLibros.Values)
             {
-                // Añadimos el título del libro y cuántas veces se ha prestado
-                // (Para esto usaremos el contador que mencionamos ayer)
                 serie.Points.AddXY(libro.Titulo, libro.ContadorPrestamos);
             }
-        
         }
 
-        // --- EVENTOS ---
+        // ================================================================
+        // 3. PESTAÑA 1: GESTIÓN DE LIBROS (Inventario)
+        // ================================================================
+
         private void btnAnadirLibro_Click(object sender, EventArgs e)
         {
-            // 1. Validar que los campos no estén vacíos
             if (string.IsNullOrWhiteSpace(txtIdLibro.Text) || string.IsNullOrWhiteSpace(txtTituloLibro.Text))
             {
-                MessageBox.Show("Por favor, completa el ID y el Título.");
-                return;
+                MessageBox.Show("Por favor, completa el ID y el Título."); return;
             }
-
-            // 2. Validar que el ID sea un número
             if (!int.TryParse(txtIdLibro.Text, out int id))
             {
-                MessageBox.Show("El ID debe ser un número entero.");
-                return;
+                MessageBox.Show("El ID debe ser un número entero."); return;
             }
-
-            // 3. Validar que el Año sea un número
             if (!int.TryParse(txtAnioLibro.Text, out int anio))
             {
-                MessageBox.Show("El Año debe ser un número válido.");
-                return;
+                MessageBox.Show("El Año debe ser un número válido."); return;
             }
 
-            // 4. Si todo está bien, procedemos a guardar
             if (!inventarioLibros.ContainsKey(id))
             {
                 Libro nuevo = new Libro(id, txtTituloLibro.Text, txtAutorLibro.Text, anio);
                 inventarioLibros.Add(id, nuevo);
-                ActualizarTablas();
 
-                // Opcional: Limpiar campos después de añadir
-                txtIdLibro.Clear();
-                txtTituloLibro.Clear();
-                txtAutorLibro.Clear();
-                txtAnioLibro.Clear();
+                ActualizarTablas();
+                btnLimpiarLibro_Click(sender, e); // Limpia los campos automáticamente
+                MessageBox.Show("Libro registrado con éxito.");
             }
-            else
-            {
-                MessageBox.Show("Este ID ya existe en el inventario.");
-            }
+            else { MessageBox.Show("Este ID ya existe en el inventario."); }
         }
 
-        private void btnAnadirUsuario_Click(object sender, EventArgs e)
+        private void btnEditarLibro_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(txtIdUsuario.Text, out int id))
+            if (int.TryParse(txtIdLibro.Text, out int id) && inventarioLibros.ContainsKey(id))
             {
-                if (!registroUsuarios.ContainsKey(id))
+                if (int.TryParse(txtAnioLibro.Text, out int nuevoAnio))
                 {
-                    Usuario nuevo = new Usuario(id, txtNombreUsuario.Text, txtCorreoUsuario.Text);
-                    registroUsuarios.Add(id, nuevo);
+                    inventarioLibros[id].Titulo = txtTituloLibro.Text;
+                    inventarioLibros[id].Autor = txtAutorLibro.Text;
+                    inventarioLibros[id].Anio = nuevoAnio;
+
                     ActualizarTablas();
+                    btnLimpiarLibro_Click(sender, e); // Limpia y desbloquea el ID
+                    MessageBox.Show("Cambios guardados correctamente.");
                 }
-                else { MessageBox.Show("ID duplicado"); }
+                else { MessageBox.Show("El año ingresado no es válido."); }
             }
+            else { MessageBox.Show("Selecciona un libro de la tabla para editar."); }
         }
 
         private void btnEliminarLibro_Click(object sender, EventArgs e)
         {
             if (dgvLibros.CurrentRow != null)
             {
-                // Obtenemos el ID de la primera columna de la fila seleccionada
                 int id = Convert.ToInt32(dgvLibros.CurrentRow.Cells[0].Value);
-
                 DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este libro?", "Confirmar", MessageBoxButtons.YesNo);
 
                 if (respuesta == DialogResult.Yes)
                 {
                     inventarioLibros.Remove(id);
                     ActualizarTablas();
+                    btnLimpiarLibro_Click(sender, e); // Limpia los campos si estaban llenos
                     MessageBox.Show("Libro eliminado.");
                 }
             }
             else { MessageBox.Show("Selecciona un libro en la tabla primero."); }
         }
 
-        private void btnEditarLibro_Click(object sender, EventArgs e)
+        private void btnLimpiarLibro_Click(object sender, EventArgs e)
         {
-            // Validamos que el ID sea numérico para buscarlo en el diccionario
-            if (int.TryParse(txtIdLibro.Text, out int id))
-            {
-                if (inventarioLibros.ContainsKey(id))
-                {
-                    // Validamos que el nuevo año ingresado sea un número
-                    if (int.TryParse(txtAnioLibro.Text, out int nuevoAnio))
-                    {
-                        inventarioLibros[id].Titulo = txtTituloLibro.Text;
-                        inventarioLibros[id].Autor = txtAutorLibro.Text;
-                        inventarioLibros[id].Anio = nuevoAnio;
-
-                        ActualizarTablas();
-                        MessageBox.Show("Cambios guardados correctamente.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("El año ingresado no es válido.");
-                    }
-                }
-            }
+            txtIdLibro.Clear();
+            txtTituloLibro.Clear();
+            txtAutorLibro.Clear();
+            txtAnioLibro.Clear();
+            txtIdLibro.ReadOnly = false; // Desbloquea el ID
+            txtIdLibro.Focus();
         }
 
         private void dgvLibros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Evita error si hace clic en el encabezado
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dgvLibros.Rows[e.RowIndex];
                 txtIdLibro.Text = fila.Cells[0].Value.ToString();
                 txtTituloLibro.Text = fila.Cells[1].Value.ToString();
                 txtAutorLibro.Text = fila.Cells[2].Value.ToString();
                 txtAnioLibro.Text = fila.Cells[3].Value.ToString();
-
-                // Bloqueamos el ID porque es la llave, no se debe cambiar al editar
-                txtIdLibro.ReadOnly = true;
+                txtIdLibro.ReadOnly = true; // Bloquea el ID
             }
         }
 
-        private void btnLimpiarLibro_Click(object sender, EventArgs e)
+        // ================================================================
+        // 4. PESTAÑA 2: GESTIÓN DE USUARIOS (Alumnos)
+        // ================================================================
+
+        private void btnAnadirUsuario_Click(object sender, EventArgs e)
         {
-            // 1. Borramos el contenido de todos los cuadros de texto
-            txtIdLibro.Clear();
-            txtTituloLibro.Clear();
-            txtAutorLibro.Clear();
-            txtAnioLibro.Clear();
+            if (string.IsNullOrWhiteSpace(txtIdUsuario.Text) || string.IsNullOrWhiteSpace(txtNombreUsuario.Text))
+            {
+                MessageBox.Show("Por favor, completa el ID y el Nombre."); return;
+            }
+            if (!int.TryParse(txtIdUsuario.Text, out int id))
+            {
+                MessageBox.Show("El ID debe ser un número entero."); return;
+            }
 
-            // 2. IMPORTANTE: Desbloqueamos el ID por si veníamos de una edición
-            txtIdLibro.ReadOnly = false;
+            if (!registroUsuarios.ContainsKey(id))
+            {
+                Usuario nuevo = new Usuario(id, txtNombreUsuario.Text, txtCorreoUsuario.Text);
+                registroUsuarios.Add(id, nuevo);
 
-            // 3. Ponemos el cursor en el ID para empezar a escribir de una vez
-            txtIdLibro.Focus();
+                ActualizarTablas();
+                btnLimpiarUsuario_Click(sender, e); // Limpia los campos automáticamente
+                MessageBox.Show("Usuario registrado con éxito.");
+            }
+            else { MessageBox.Show("Este ID de usuario ya existe."); }
+        }
+
+        private void btnEditarUsuario_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdUsuario.Text, out int id) && registroUsuarios.ContainsKey(id))
+            {
+                registroUsuarios[id].Nombre = txtNombreUsuario.Text;
+                registroUsuarios[id].Correo = txtCorreoUsuario.Text;
+
+                ActualizarTablas();
+                btnLimpiarUsuario_Click(sender, e); // Limpia y desbloquea el ID
+                MessageBox.Show("Datos del alumno actualizados correctamente.");
+            }
+            else { MessageBox.Show("Selecciona un usuario de la tabla para editar."); }
+        }
+
+        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        {
+            if (dgvUsuarios.CurrentRow != null)
+            {
+                int id = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells[0].Value);
+                DialogResult confirmacion = MessageBox.Show("¿Eliminar este usuario?", "Confirmar", MessageBoxButtons.YesNo);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    registroUsuarios.Remove(id);
+                    ActualizarTablas();
+                    btnLimpiarUsuario_Click(sender, e); // Limpia los campos si estaban llenos
+                    MessageBox.Show("Usuario eliminado.");
+                }
+            }
+            else { MessageBox.Show("Selecciona un usuario en la tabla primero."); }
         }
 
         private void btnLimpiarUsuario_Click(object sender, EventArgs e)
@@ -183,9 +208,21 @@ namespace BibliotecaUDB_V2
             txtIdUsuario.Clear();
             txtNombreUsuario.Clear();
             txtCorreoUsuario.Clear();
-
-            txtIdUsuario.ReadOnly = false;
+            txtIdUsuario.ReadOnly = false; // Desbloquea el ID
             txtIdUsuario.Focus();
         }
+
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvUsuarios.Rows[e.RowIndex];
+                txtIdUsuario.Text = fila.Cells[0].Value.ToString();
+                txtNombreUsuario.Text = fila.Cells[1].Value.ToString();
+                txtCorreoUsuario.Text = fila.Cells[2].Value.ToString();
+                txtIdUsuario.ReadOnly = true; // Bloquea el ID
+            }
+        }
+
     }
 }
