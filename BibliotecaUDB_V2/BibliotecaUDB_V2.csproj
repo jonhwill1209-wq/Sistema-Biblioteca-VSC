@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91C62C7F-3BB3-47D9-9314-08980736B9FC}</ProjectGuid>
+    <ProjectGuid>{8F2198AA-BB21-451B-919C-CD5AD3C871ED}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BibliotecaApp</RootNamespace>
-    <AssemblyName>BibliotecaApp</AssemblyName>
+    <RootNamespace>BibliotecaUDB_V2</RootNamespace>
+    <AssemblyName>BibliotecaUDB_V2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,14 +52,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Libro.cs" />
-    <Compile Include="Models\Recurso.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -81,10 +75,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

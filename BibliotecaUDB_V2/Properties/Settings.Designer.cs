@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BibliotecaApp.Properties
+namespace BibliotecaUDB_V2.Properties
 {
 
 
