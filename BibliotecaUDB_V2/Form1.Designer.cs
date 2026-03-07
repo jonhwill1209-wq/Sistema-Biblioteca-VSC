@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnLimpiarLibro = new System.Windows.Forms.Button();
             this.btnDocumentacion = new System.Windows.Forms.Button();
             this.chartUsuariosActivos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartLibrosMasPrestados = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -79,6 +80,10 @@
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.lblIdUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosActivos)).BeginInit();
@@ -105,6 +110,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnLimpiarLibro);
             this.tabPage1.Controls.Add(this.btnDocumentacion);
             this.tabPage1.Controls.Add(this.chartUsuariosActivos);
             this.tabPage1.Controls.Add(this.chartLibrosMasPrestados);
@@ -120,6 +126,16 @@
             this.tabPage1.Text = "📊 Dashboard y Libros";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnLimpiarLibro
+            // 
+            this.btnLimpiarLibro.Location = new System.Drawing.Point(187, 255);
+            this.btnLimpiarLibro.Name = "btnLimpiarLibro";
+            this.btnLimpiarLibro.Size = new System.Drawing.Size(113, 23);
+            this.btnLimpiarLibro.TabIndex = 7;
+            this.btnLimpiarLibro.Text = "Limpiar Libro";
+            this.btnLimpiarLibro.UseVisualStyleBackColor = true;
+            this.btnLimpiarLibro.Click += new System.EventHandler(this.btnLimpiarLibro_Click);
+            // 
             // btnDocumentacion
             // 
             this.btnDocumentacion.Location = new System.Drawing.Point(20, 357);
@@ -131,59 +147,61 @@
             // 
             // chartUsuariosActivos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend7);
             this.chartUsuariosActivos.Location = new System.Drawing.Point(499, 217);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series7);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(255, 187);
             this.chartUsuariosActivos.TabIndex = 5;
             this.chartUsuariosActivos.Text = "chart2";
             // 
             // chartLibrosMasPrestados
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartLibrosMasPrestados.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartLibrosMasPrestados.Legends.Add(legend8);
             this.chartLibrosMasPrestados.Location = new System.Drawing.Point(499, 25);
             this.chartLibrosMasPrestados.Name = "chartLibrosMasPrestados";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartLibrosMasPrestados.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartLibrosMasPrestados.Series.Add(series8);
             this.chartLibrosMasPrestados.Size = new System.Drawing.Size(249, 186);
             this.chartLibrosMasPrestados.TabIndex = 4;
             this.chartLibrosMasPrestados.Text = "chart1";
             // 
             // btnEliminarLibro
             // 
-            this.btnEliminarLibro.Location = new System.Drawing.Point(305, 217);
+            this.btnEliminarLibro.Location = new System.Drawing.Point(369, 255);
             this.btnEliminarLibro.Name = "btnEliminarLibro";
             this.btnEliminarLibro.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarLibro.TabIndex = 3;
             this.btnEliminarLibro.Text = "Eliminar";
             this.btnEliminarLibro.UseVisualStyleBackColor = true;
+            this.btnEliminarLibro.Click += new System.EventHandler(this.btnEliminarLibro_Click);
             // 
             // btnEditarLibro
             // 
-            this.btnEditarLibro.Location = new System.Drawing.Point(165, 216);
+            this.btnEditarLibro.Location = new System.Drawing.Point(87, 255);
             this.btnEditarLibro.Name = "btnEditarLibro";
             this.btnEditarLibro.Size = new System.Drawing.Size(75, 23);
             this.btnEditarLibro.TabIndex = 2;
             this.btnEditarLibro.Text = "Editar";
             this.btnEditarLibro.UseVisualStyleBackColor = true;
+            this.btnEditarLibro.Click += new System.EventHandler(this.btnEditarLibro_Click);
             // 
             // btnAnadirLibro
             // 
-            this.btnAnadirLibro.Location = new System.Drawing.Point(41, 217);
+            this.btnAnadirLibro.Location = new System.Drawing.Point(6, 255);
             this.btnAnadirLibro.Name = "btnAnadirLibro";
             this.btnAnadirLibro.Size = new System.Drawing.Size(75, 23);
             this.btnAnadirLibro.TabIndex = 1;
@@ -193,6 +211,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgvLibros);
             this.groupBox1.Controls.Add(this.txtAnioLibro);
             this.groupBox1.Controls.Add(this.txtAutorLibro);
@@ -208,6 +230,8 @@
             // dgvLibros
             // 
             this.dgvLibros.AllowUserToAddRows = false;
+            this.dgvLibros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLibros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLibros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLibros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -215,13 +239,14 @@
             this.colTitulo,
             this.colAutor,
             this.colAnio});
-            this.dgvLibros.Location = new System.Drawing.Point(4, 50);
+            this.dgvLibros.Location = new System.Drawing.Point(6, 75);
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.ReadOnly = true;
             this.dgvLibros.RowHeadersWidth = 51;
             this.dgvLibros.RowTemplate.Height = 24;
-            this.dgvLibros.Size = new System.Drawing.Size(480, 150);
+            this.dgvLibros.Size = new System.Drawing.Size(480, 170);
             this.dgvLibros.TabIndex = 4;
+            this.dgvLibros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellClick);
             // 
             // colIDLibro
             // 
@@ -255,35 +280,31 @@
             // 
             // txtAnioLibro
             // 
-            this.txtAnioLibro.Location = new System.Drawing.Point(366, 21);
+            this.txtAnioLibro.Location = new System.Drawing.Point(417, 37);
             this.txtAnioLibro.Name = "txtAnioLibro";
             this.txtAnioLibro.Size = new System.Drawing.Size(48, 22);
             this.txtAnioLibro.TabIndex = 3;
-            this.txtAnioLibro.Text = "Año";
             // 
             // txtAutorLibro
             // 
-            this.txtAutorLibro.Location = new System.Drawing.Point(221, 21);
+            this.txtAutorLibro.Location = new System.Drawing.Point(272, 37);
             this.txtAutorLibro.Name = "txtAutorLibro";
             this.txtAutorLibro.Size = new System.Drawing.Size(139, 22);
             this.txtAutorLibro.TabIndex = 2;
-            this.txtAutorLibro.Text = "Autor";
             // 
             // txtTituloLibro
             // 
-            this.txtTituloLibro.Location = new System.Drawing.Point(76, 21);
+            this.txtTituloLibro.Location = new System.Drawing.Point(79, 37);
             this.txtTituloLibro.Name = "txtTituloLibro";
-            this.txtTituloLibro.Size = new System.Drawing.Size(139, 22);
+            this.txtTituloLibro.Size = new System.Drawing.Size(184, 22);
             this.txtTituloLibro.TabIndex = 1;
-            this.txtTituloLibro.Text = "Titulo";
             // 
             // txtIdLibro
             // 
-            this.txtIdLibro.Location = new System.Drawing.Point(3, 21);
+            this.txtIdLibro.Location = new System.Drawing.Point(6, 37);
             this.txtIdLibro.Name = "txtIdLibro";
             this.txtIdLibro.Size = new System.Drawing.Size(67, 22);
             this.txtIdLibro.TabIndex = 0;
-            this.txtIdLibro.Text = "ID";
             // 
             // tabPage2
             // 
@@ -543,6 +564,42 @@
             this.lblIdUsuario.TabIndex = 0;
             this.lblIdUsuario.Text = "ID Usuario";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(79, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Titulo";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(269, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Autor";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(417, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Año";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -616,6 +673,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTitulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAnio;
+        private System.Windows.Forms.Button btnLimpiarLibro;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

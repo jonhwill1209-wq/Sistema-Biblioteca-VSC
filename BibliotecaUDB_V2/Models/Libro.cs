@@ -8,6 +8,8 @@
         public int Anio { get; set; }
         public bool EstaPrestado { get; set; } // Agregamos esto para el control de disponibilidad
 
+        public int ContadorPrestamos { get; set; } = 0;
+
         public Libro(int id, string titulo, string autor, int anio)
         {
             Id = id;
