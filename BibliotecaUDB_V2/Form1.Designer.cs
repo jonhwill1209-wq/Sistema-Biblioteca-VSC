@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnLimpiarLibro = new System.Windows.Forms.Button();
@@ -148,37 +150,45 @@
             // 
             // chartUsuariosActivos
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend1);
             this.chartUsuariosActivos.Location = new System.Drawing.Point(499, 217);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series7);
+            this.chartUsuariosActivos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series1);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(255, 187);
             this.chartUsuariosActivos.TabIndex = 5;
-            this.chartUsuariosActivos.Text = "chart2";
+            this.chartUsuariosActivos.Text = "Usuarios Mas activos";
+            title1.Name = "Title1";
+            title1.Text = "Usuarios mas Activos";
+            this.chartUsuariosActivos.Titles.Add(title1);
             // 
             // chartLibrosMasPrestados
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartLibrosMasPrestados.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartLibrosMasPrestados.Legends.Add(legend2);
             this.chartLibrosMasPrestados.Location = new System.Drawing.Point(499, 25);
             this.chartLibrosMasPrestados.Name = "chartLibrosMasPrestados";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartLibrosMasPrestados.Series.Add(series8);
+            this.chartLibrosMasPrestados.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartLibrosMasPrestados.Series.Add(series2);
             this.chartLibrosMasPrestados.Size = new System.Drawing.Size(249, 186);
             this.chartLibrosMasPrestados.TabIndex = 4;
-            this.chartLibrosMasPrestados.Text = "chart1";
+            this.chartLibrosMasPrestados.Text = "Libros Mas Prestados";
+            title2.Name = "Title1";
+            title2.Text = "Libros mas Prestados";
+            this.chartLibrosMasPrestados.Titles.Add(title2);
             // 
             // btnEliminarLibro
             // 
@@ -223,7 +233,7 @@
             this.groupBox1.Controls.Add(this.txtIdLibro);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 207);
+            this.groupBox1.Size = new System.Drawing.Size(490, 246);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Libros";
@@ -276,12 +286,12 @@
             this.colTitulo,
             this.colAutor,
             this.colAnio});
-            this.dgvLibros.Location = new System.Drawing.Point(6, 75);
+            this.dgvLibros.Location = new System.Drawing.Point(6, 65);
             this.dgvLibros.Name = "dgvLibros";
             this.dgvLibros.ReadOnly = true;
             this.dgvLibros.RowHeadersWidth = 51;
             this.dgvLibros.RowTemplate.Height = 24;
-            this.dgvLibros.Size = new System.Drawing.Size(480, 170);
+            this.dgvLibros.Size = new System.Drawing.Size(459, 175);
             this.dgvLibros.TabIndex = 4;
             this.dgvLibros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLibros_CellClick);
             // 

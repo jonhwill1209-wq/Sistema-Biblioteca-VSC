@@ -9,6 +9,8 @@ namespace BibliotecaUDB_V2.Models
         public string Correo { get; set; }
         public List<Libro> LibrosPrestados { get; set; }
 
+        public int ContadorPrestamos { get; set; } = 0;
+
         public Usuario(int id, string nombre, string correo)
         {
             Id = id;

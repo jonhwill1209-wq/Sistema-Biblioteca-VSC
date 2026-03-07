@@ -268,6 +268,13 @@ namespace BibliotecaUDB_V2
                 ActualizarTablas();
                 ActualizarGraficaLibros(); // Para que se vea el movimiento
                 MessageBox.Show("Préstamo registrado exitosamente.");
+
+                // cuando el préstamo es exitoso:
+                inventarioLibros[idLibro].ContadorPrestamos++;
+                registroUsuarios[idUsuario].ContadorPrestamos++; // <-- Añade esta línea
+                ActualizarGraficas(); // 
+
+
             }
             else { MessageBox.Show("Ingresa IDs válidos."); }
         }
@@ -283,6 +290,45 @@ namespace BibliotecaUDB_V2
                     MessageBox.Show("Devolución procesada. El libro está disponible.");
                 }
                 else { MessageBox.Show("No hay un registro de préstamo para este libro."); }
+            }
+        }
+
+
+
+        private void ActualizarGraficas()
+        {
+            // --- 1. GRÁFICA DE LIBROS (PASTEL) ---
+            chartLibrosMasPrestados.Series.Clear();
+            chartLibrosMasPrestados.Titles.Clear();
+            chartLibrosMasPrestados.Titles.Add("Libros con Mayor Demanda");
+
+            var serieLibros = chartLibrosMasPrestados.Series.Add("Préstamos");
+            serieLibros.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            serieLibros.IsValueShownAsLabel = true; // Muestra el número sobre el trozo de pastel
+
+            foreach (var libro in inventarioLibros.Values)
+            {
+                if (libro.ContadorPrestamos > 0)
+                {
+                    serieLibros.Points.AddXY(libro.Titulo, libro.ContadorPrestamos);
+                }
+            }
+
+            // --- 2. GRÁFICA DE USUARIOS (BARRAS) ---
+            chartUsuariosActivos.Series.Clear();
+            chartUsuariosActivos.Titles.Clear();
+            chartUsuariosActivos.Titles.Add("Ranking de Usuarios Activos");
+
+            var serieUsers = chartUsuariosActivos.Series.Add("Actividad");
+            serieUsers.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            serieUsers.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+
+            foreach (var user in registroUsuarios.Values)
+            {
+                if (user.ContadorPrestamos > 0)
+                {
+                    serieUsers.Points.AddXY(user.Nombre, user.ContadorPrestamos);
+                }
             }
         }
     }
