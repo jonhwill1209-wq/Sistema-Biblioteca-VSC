@@ -53,7 +53,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(15, 28);
+            this.txtId.Location = new System.Drawing.Point(15, 26);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(161, 22);
             this.txtId.TabIndex = 1;
@@ -77,7 +77,7 @@
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnRegistrar.Location = new System.Drawing.Point(15, 69);
+            this.btnRegistrar.Location = new System.Drawing.Point(12, 69);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(161, 43);
             this.btnRegistrar.TabIndex = 4;
@@ -103,7 +103,7 @@
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBuscar.Location = new System.Drawing.Point(241, 69);
+            this.btnBuscar.Location = new System.Drawing.Point(216, 69);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(109, 43);
             this.btnBuscar.TabIndex = 6;
@@ -114,7 +114,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Red;
-            this.btnEliminar.Location = new System.Drawing.Point(405, 69);
+            this.btnEliminar.Location = new System.Drawing.Point(388, 70);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 42);
             this.btnEliminar.TabIndex = 7;
