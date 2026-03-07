@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnLimpiarLibro = new System.Windows.Forms.Button();
@@ -84,6 +84,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnLimpiarUsuario = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartUsuariosActivos)).BeginInit();
@@ -128,11 +129,11 @@
             // 
             // btnLimpiarLibro
             // 
-            this.btnLimpiarLibro.Location = new System.Drawing.Point(187, 255);
+            this.btnLimpiarLibro.Location = new System.Drawing.Point(223, 255);
             this.btnLimpiarLibro.Name = "btnLimpiarLibro";
             this.btnLimpiarLibro.Size = new System.Drawing.Size(113, 23);
             this.btnLimpiarLibro.TabIndex = 7;
-            this.btnLimpiarLibro.Text = "Limpiar Libro";
+            this.btnLimpiarLibro.Text = "Limpiar campos";
             this.btnLimpiarLibro.UseVisualStyleBackColor = true;
             this.btnLimpiarLibro.Click += new System.EventHandler(this.btnLimpiarLibro_Click);
             // 
@@ -147,34 +148,34 @@
             // 
             // chartUsuariosActivos
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend1);
             this.chartUsuariosActivos.Location = new System.Drawing.Point(499, 217);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series1);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(255, 187);
             this.chartUsuariosActivos.TabIndex = 5;
             this.chartUsuariosActivos.Text = "chart2";
             // 
             // chartLibrosMasPrestados
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartLibrosMasPrestados.Legends.Add(legend8);
+            chartArea2.Name = "ChartArea1";
+            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartLibrosMasPrestados.Legends.Add(legend2);
             this.chartLibrosMasPrestados.Location = new System.Drawing.Point(499, 25);
             this.chartLibrosMasPrestados.Name = "chartLibrosMasPrestados";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartLibrosMasPrestados.Series.Add(series8);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartLibrosMasPrestados.Series.Add(series2);
             this.chartLibrosMasPrestados.Size = new System.Drawing.Size(249, 186);
             this.chartLibrosMasPrestados.TabIndex = 4;
             this.chartLibrosMasPrestados.Text = "chart1";
@@ -193,9 +194,9 @@
             // 
             this.btnEditarLibro.Location = new System.Drawing.Point(87, 255);
             this.btnEditarLibro.Name = "btnEditarLibro";
-            this.btnEditarLibro.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarLibro.Size = new System.Drawing.Size(130, 23);
             this.btnEditarLibro.TabIndex = 2;
-            this.btnEditarLibro.Text = "Editar";
+            this.btnEditarLibro.Text = "Guardar cambios";
             this.btnEditarLibro.UseVisualStyleBackColor = true;
             this.btnEditarLibro.Click += new System.EventHandler(this.btnEditarLibro_Click);
             // 
@@ -308,6 +309,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.btnLimpiarUsuario);
             this.tabPage2.Controls.Add(this.btnDevolver);
             this.tabPage2.Controls.Add(this.btnPrestar);
             this.tabPage2.Controls.Add(this.grpOperaciones);
@@ -437,7 +439,7 @@
             // 
             // btnEliminarUsuario
             // 
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(182, 229);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(387, 230);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnEliminarUsuario.TabIndex = 3;
@@ -600,6 +602,16 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Año";
             // 
+            // btnLimpiarUsuario
+            // 
+            this.btnLimpiarUsuario.Location = new System.Drawing.Point(235, 230);
+            this.btnLimpiarUsuario.Name = "btnLimpiarUsuario";
+            this.btnLimpiarUsuario.Size = new System.Drawing.Size(120, 23);
+            this.btnLimpiarUsuario.TabIndex = 7;
+            this.btnLimpiarUsuario.Text = "Limpiar Campos";
+            this.btnLimpiarUsuario.UseVisualStyleBackColor = true;
+            this.btnLimpiarUsuario.Click += new System.EventHandler(this.btnLimpiarUsuario_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -678,6 +690,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnLimpiarUsuario;
     }
 }
 

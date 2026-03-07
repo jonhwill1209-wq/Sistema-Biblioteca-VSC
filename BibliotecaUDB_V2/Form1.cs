@@ -165,24 +165,27 @@ namespace BibliotecaUDB_V2
 
         private void btnLimpiarLibro_Click(object sender, EventArgs e)
         {
+            // 1. Borramos el contenido de todos los cuadros de texto
             txtIdLibro.Clear();
             txtTituloLibro.Clear();
             txtAutorLibro.Clear();
             txtAnioLibro.Clear();
 
-            // IMPORTANTE: Desbloqueamos el ID por si estaba en modo edición
+            // 2. IMPORTANTE: Desbloqueamos el ID por si veníamos de una edición
             txtIdLibro.ReadOnly = false;
-            txtIdLibro.Focus(); // Pone el cursor listo para escribir
+
+            // 3. Ponemos el cursor en el ID para empezar a escribir de una vez
+            txtIdLibro.Focus();
         }
 
-        private void txtIdLibro_TextChanged(object sender, EventArgs e)
+        private void btnLimpiarUsuario_Click(object sender, EventArgs e)
         {
+            txtIdUsuario.Clear();
+            txtNombreUsuario.Clear();
+            txtCorreoUsuario.Clear();
 
-        }
-
-        private void txtAnioLibro_TextChanged(object sender, EventArgs e)
-        {
-
+            txtIdUsuario.ReadOnly = false;
+            txtIdUsuario.Focus();
         }
     }
 }
