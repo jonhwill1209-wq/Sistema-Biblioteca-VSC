@@ -16,5 +16,15 @@ namespace BibliotecaUDB_V2
         {
             InitializeComponent();
         }
+
+        private void grpOperaciones_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chartUsuariosActivos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
