@@ -162,7 +162,7 @@
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartUsuariosActivos.Series.Add(series1);
-            this.chartUsuariosActivos.Size = new System.Drawing.Size(255, 187);
+            this.chartUsuariosActivos.Size = new System.Drawing.Size(352, 187);
             this.chartUsuariosActivos.TabIndex = 5;
             this.chartUsuariosActivos.Text = "Usuarios Mas activos";
             title1.Name = "Title1";
@@ -183,7 +183,7 @@
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartLibrosMasPrestados.Series.Add(series2);
-            this.chartLibrosMasPrestados.Size = new System.Drawing.Size(249, 186);
+            this.chartLibrosMasPrestados.Size = new System.Drawing.Size(352, 186);
             this.chartLibrosMasPrestados.TabIndex = 4;
             this.chartLibrosMasPrestados.Text = "Libros Mas Prestados";
             title2.Name = "Title1";
