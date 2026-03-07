@@ -13,6 +13,9 @@ namespace BibliotecaUDB_V2
         Dictionary<int, Libro> inventarioLibros = new Dictionary<int, Libro>();
         Dictionary<int, Usuario> registroUsuarios = new Dictionary<int, Usuario>();
 
+        // Diccionario para préstamos: La llave será el ID del Libro (asumiendo que un libro no se presta a dos personas a la vez)
+        Dictionary<int, Prestamo> registroPrestamos = new Dictionary<int, Prestamo>();
+
         // Matriz para las estadísticas (Gráficas - Pendiente de implementar)
         int[,] matrizEstadisticas = new int[2, 100];
 
@@ -38,6 +41,13 @@ namespace BibliotecaUDB_V2
             foreach (var u in registroUsuarios.Values)
             {
                 dgvUsuarios.Rows.Add(u.Id, u.Nombre, u.Correo);
+            }
+
+            //Refrescar tabla de prestamos
+            dgvPrestamos.Rows.Clear();
+            foreach (var p in registroPrestamos.Values)
+            {
+                dgvPrestamos.Rows.Add(p.IdLibro, p.IdUsuario, p.FechaSalida.ToShortDateString(), p.Estado);
             }
         }
 
@@ -224,5 +234,56 @@ namespace BibliotecaUDB_V2
             }
         }
 
+        private void btnPrestar_Click(object sender, EventArgs e)
+        {
+            // 1. Validar que los IDs sean números
+            if (int.TryParse(txtIdLibroPrestamo.Text, out int idLibro) &&
+                int.TryParse(txtIdUsuarioPrestamo.Text, out int idUsuario))
+            {
+                // 2. VALIDACIÓN CLAVE: ¿Existen el libro y el alumno?
+                if (!inventarioLibros.ContainsKey(idLibro))
+                {
+                    MessageBox.Show("El ID del libro no existe en el inventario."); return;
+                }
+                if (!registroUsuarios.ContainsKey(idUsuario))
+                {
+                    MessageBox.Show("El ID del usuario no está registrado."); return;
+                }
+
+                // 3. Verificar si el libro ya está prestado
+                if (registroPrestamos.ContainsKey(idLibro) && registroPrestamos[idLibro].Estado == "Prestado")
+                {
+                    MessageBox.Show("Este libro ya se encuentra prestado actualmente."); return;
+                }
+
+                // 4. Crear el préstamo
+                Prestamo nuevoPrestamo = new Prestamo(idLibro, idUsuario, DateTime.Now, "Prestado");
+
+                // Guardar en el diccionario (usamos el ID del libro como llave)
+                registroPrestamos[idLibro] = nuevoPrestamo;
+
+                // 5. Opcional: Aumentar el contador para la gráfica que haremos después
+                inventarioLibros[idLibro].ContadorPrestamos++;
+
+                ActualizarTablas();
+                ActualizarGraficaLibros(); // Para que se vea el movimiento
+                MessageBox.Show("Préstamo registrado exitosamente.");
+            }
+            else { MessageBox.Show("Ingresa IDs válidos."); }
+        }
+
+        private void btnDevolver_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtIdLibroPrestamo.Text, out int idLibro))
+            {
+                if (registroPrestamos.ContainsKey(idLibro))
+                {
+                    registroPrestamos[idLibro].Estado = "Devuelto";
+                    ActualizarTablas();
+                    MessageBox.Show("Devolución procesada. El libro está disponible.");
+                }
+                else { MessageBox.Show("No hay un registro de préstamo para este libro."); }
+            }
+        }
     }
 }

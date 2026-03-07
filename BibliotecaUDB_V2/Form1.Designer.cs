@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnLimpiarLibro = new System.Windows.Forms.Button();
@@ -62,14 +62,14 @@
             this.btnDevolver = new System.Windows.Forms.Button();
             this.btnPrestar = new System.Windows.Forms.Button();
             this.grpOperaciones = new System.Windows.Forms.GroupBox();
-            this.dgvPrestamosActivos = new System.Windows.Forms.DataGridView();
+            this.dgvPrestamos = new System.Windows.Forms.DataGridView();
             this.colLibroId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUsuarioID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtIdLibroPrestar = new System.Windows.Forms.TextBox();
+            this.txtIdLibroPrestamo = new System.Windows.Forms.TextBox();
             this.lblLibroPrestar = new System.Windows.Forms.Label();
-            this.txtIdUsuarioPrestar = new System.Windows.Forms.TextBox();
+            this.txtIdUsuarioPrestamo = new System.Windows.Forms.TextBox();
             this.lblIdUsuarioPrestar = new System.Windows.Forms.Label();
             this.btnEliminarUsuario = new System.Windows.Forms.Button();
             this.btnEditarUsuario = new System.Windows.Forms.Button();
@@ -93,7 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.grpOperaciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosActivos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).BeginInit();
             this.grpGEstionUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
@@ -148,34 +148,34 @@
             // 
             // chartUsuariosActivos
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend5);
+            chartArea7.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend7);
             this.chartUsuariosActivos.Location = new System.Drawing.Point(499, 217);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series5);
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series7);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(255, 187);
             this.chartUsuariosActivos.TabIndex = 5;
             this.chartUsuariosActivos.Text = "chart2";
             // 
             // chartLibrosMasPrestados
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartLibrosMasPrestados.Legends.Add(legend6);
+            chartArea8.Name = "ChartArea1";
+            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartLibrosMasPrestados.Legends.Add(legend8);
             this.chartLibrosMasPrestados.Location = new System.Drawing.Point(499, 25);
             this.chartLibrosMasPrestados.Name = "chartLibrosMasPrestados";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartLibrosMasPrestados.Series.Add(series6);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartLibrosMasPrestados.Series.Add(series8);
             this.chartLibrosMasPrestados.Size = new System.Drawing.Size(249, 186);
             this.chartLibrosMasPrestados.TabIndex = 4;
             this.chartLibrosMasPrestados.Text = "chart1";
@@ -379,6 +379,7 @@
             this.btnDevolver.TabIndex = 6;
             this.btnDevolver.Text = "Registar Devolución";
             this.btnDevolver.UseVisualStyleBackColor = true;
+            this.btnDevolver.Click += new System.EventHandler(this.btnDevolver_Click);
             // 
             // btnPrestar
             // 
@@ -388,13 +389,14 @@
             this.btnPrestar.TabIndex = 5;
             this.btnPrestar.Text = "Registrar Préstamo";
             this.btnPrestar.UseVisualStyleBackColor = true;
+            this.btnPrestar.Click += new System.EventHandler(this.btnPrestar_Click);
             // 
             // grpOperaciones
             // 
-            this.grpOperaciones.Controls.Add(this.dgvPrestamosActivos);
-            this.grpOperaciones.Controls.Add(this.txtIdLibroPrestar);
+            this.grpOperaciones.Controls.Add(this.dgvPrestamos);
+            this.grpOperaciones.Controls.Add(this.txtIdLibroPrestamo);
             this.grpOperaciones.Controls.Add(this.lblLibroPrestar);
-            this.grpOperaciones.Controls.Add(this.txtIdUsuarioPrestar);
+            this.grpOperaciones.Controls.Add(this.txtIdUsuarioPrestamo);
             this.grpOperaciones.Controls.Add(this.lblIdUsuarioPrestar);
             this.grpOperaciones.Location = new System.Drawing.Point(527, 6);
             this.grpOperaciones.Name = "grpOperaciones";
@@ -403,23 +405,23 @@
             this.grpOperaciones.TabStop = false;
             this.grpOperaciones.Text = "Gestion de Préstamos";
             // 
-            // dgvPrestamosActivos
+            // dgvPrestamos
             // 
-            this.dgvPrestamosActivos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPrestamosActivos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPrestamosActivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrestamosActivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPrestamos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPrestamos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrestamos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colLibroId,
             this.colUsuarioID,
             this.colFecha,
             this.colEstado});
-            this.dgvPrestamosActivos.Location = new System.Drawing.Point(0, 67);
-            this.dgvPrestamosActivos.Name = "dgvPrestamosActivos";
-            this.dgvPrestamosActivos.ReadOnly = true;
-            this.dgvPrestamosActivos.RowHeadersWidth = 51;
-            this.dgvPrestamosActivos.RowTemplate.Height = 24;
-            this.dgvPrestamosActivos.Size = new System.Drawing.Size(326, 150);
-            this.dgvPrestamosActivos.TabIndex = 9;
+            this.dgvPrestamos.Location = new System.Drawing.Point(0, 67);
+            this.dgvPrestamos.Name = "dgvPrestamos";
+            this.dgvPrestamos.ReadOnly = true;
+            this.dgvPrestamos.RowHeadersWidth = 51;
+            this.dgvPrestamos.RowTemplate.Height = 24;
+            this.dgvPrestamos.Size = new System.Drawing.Size(326, 150);
+            this.dgvPrestamos.TabIndex = 9;
             // 
             // colLibroId
             // 
@@ -451,12 +453,12 @@
             this.colEstado.Name = "colEstado";
             this.colEstado.ReadOnly = true;
             // 
-            // txtIdLibroPrestar
+            // txtIdLibroPrestamo
             // 
-            this.txtIdLibroPrestar.Location = new System.Drawing.Point(116, 36);
-            this.txtIdLibroPrestar.Name = "txtIdLibroPrestar";
-            this.txtIdLibroPrestar.Size = new System.Drawing.Size(100, 22);
-            this.txtIdLibroPrestar.TabIndex = 8;
+            this.txtIdLibroPrestamo.Location = new System.Drawing.Point(116, 36);
+            this.txtIdLibroPrestamo.Name = "txtIdLibroPrestamo";
+            this.txtIdLibroPrestamo.Size = new System.Drawing.Size(100, 22);
+            this.txtIdLibroPrestamo.TabIndex = 8;
             // 
             // lblLibroPrestar
             // 
@@ -467,12 +469,12 @@
             this.lblLibroPrestar.TabIndex = 7;
             this.lblLibroPrestar.Text = "ID del Libro";
             // 
-            // txtIdUsuarioPrestar
+            // txtIdUsuarioPrestamo
             // 
-            this.txtIdUsuarioPrestar.Location = new System.Drawing.Point(6, 36);
-            this.txtIdUsuarioPrestar.Name = "txtIdUsuarioPrestar";
-            this.txtIdUsuarioPrestar.Size = new System.Drawing.Size(100, 22);
-            this.txtIdUsuarioPrestar.TabIndex = 6;
+            this.txtIdUsuarioPrestamo.Location = new System.Drawing.Point(6, 36);
+            this.txtIdUsuarioPrestamo.Name = "txtIdUsuarioPrestamo";
+            this.txtIdUsuarioPrestamo.Size = new System.Drawing.Size(100, 22);
+            this.txtIdUsuarioPrestamo.TabIndex = 6;
             // 
             // lblIdUsuarioPrestar
             // 
@@ -633,7 +635,7 @@
             this.tabPage2.ResumeLayout(false);
             this.grpOperaciones.ResumeLayout(false);
             this.grpOperaciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamosActivos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrestamos)).EndInit();
             this.grpGEstionUsuarios.ResumeLayout(false);
             this.grpGEstionUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
@@ -668,12 +670,12 @@
         private System.Windows.Forms.TextBox txtNombreUsuario;
         private System.Windows.Forms.GroupBox grpOperaciones;
         private System.Windows.Forms.Label lblIdUsuarioPrestar;
-        private System.Windows.Forms.TextBox txtIdUsuarioPrestar;
+        private System.Windows.Forms.TextBox txtIdUsuarioPrestamo;
         private System.Windows.Forms.Button btnDevolver;
         private System.Windows.Forms.Button btnPrestar;
-        private System.Windows.Forms.TextBox txtIdLibroPrestar;
+        private System.Windows.Forms.TextBox txtIdLibroPrestamo;
         private System.Windows.Forms.Label lblLibroPrestar;
-        private System.Windows.Forms.DataGridView dgvPrestamosActivos;
+        private System.Windows.Forms.DataGridView dgvPrestamos;
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
