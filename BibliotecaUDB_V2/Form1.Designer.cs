@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnLimpiarLibro = new System.Windows.Forms.Button();
@@ -134,7 +134,7 @@
             // btnLimpiarLibro
             // 
             this.btnLimpiarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarLibro.Location = new System.Drawing.Point(251, 367);
+            this.btnLimpiarLibro.Location = new System.Drawing.Point(295, 367);
             this.btnLimpiarLibro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLimpiarLibro.Name = "btnLimpiarLibro";
             this.btnLimpiarLibro.Padding = new System.Windows.Forms.Padding(5);
@@ -149,60 +149,61 @@
             this.btnDocumentacion.Location = new System.Drawing.Point(22, 513);
             this.btnDocumentacion.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDocumentacion.Name = "btnDocumentacion";
-            this.btnDocumentacion.Size = new System.Drawing.Size(137, 33);
+            this.btnDocumentacion.Size = new System.Drawing.Size(147, 33);
             this.btnDocumentacion.TabIndex = 6;
             this.btnDocumentacion.Text = "Documentacion";
             this.btnDocumentacion.UseVisualStyleBackColor = true;
+            this.btnDocumentacion.Click += new System.EventHandler(this.btnDocumentacion_Click);
             // 
             // chartUsuariosActivos
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartUsuariosActivos.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartUsuariosActivos.Legends.Add(legend5);
+            chartArea13.Name = "ChartArea1";
+            this.chartUsuariosActivos.ChartAreas.Add(chartArea13);
+            legend13.Name = "Legend1";
+            this.chartUsuariosActivos.Legends.Add(legend13);
             this.chartUsuariosActivos.Location = new System.Drawing.Point(732, 310);
             this.chartUsuariosActivos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartUsuariosActivos.Name = "chartUsuariosActivos";
             this.chartUsuariosActivos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartUsuariosActivos.Series.Add(series5);
+            series13.ChartArea = "ChartArea1";
+            series13.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series13.Legend = "Legend1";
+            series13.Name = "Series1";
+            this.chartUsuariosActivos.Series.Add(series13);
             this.chartUsuariosActivos.Size = new System.Drawing.Size(396, 269);
             this.chartUsuariosActivos.TabIndex = 5;
             this.chartUsuariosActivos.Text = "Usuarios Mas activos";
-            title5.Name = "Title1";
-            title5.Text = "Usuarios mas Activos";
-            this.chartUsuariosActivos.Titles.Add(title5);
+            title13.Name = "Title1";
+            title13.Text = "Usuarios mas Activos";
+            this.chartUsuariosActivos.Titles.Add(title13);
             // 
             // chartLibrosMasPrestados
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartLibrosMasPrestados.Legends.Add(legend6);
+            chartArea14.Name = "ChartArea1";
+            this.chartLibrosMasPrestados.ChartAreas.Add(chartArea14);
+            legend14.Name = "Legend1";
+            this.chartLibrosMasPrestados.Legends.Add(legend14);
             this.chartLibrosMasPrestados.Location = new System.Drawing.Point(732, 34);
             this.chartLibrosMasPrestados.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chartLibrosMasPrestados.Name = "chartLibrosMasPrestados";
             this.chartLibrosMasPrestados.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartLibrosMasPrestados.Series.Add(series6);
+            series14.ChartArea = "ChartArea1";
+            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series14.Legend = "Legend1";
+            series14.Name = "Series1";
+            this.chartLibrosMasPrestados.Series.Add(series14);
             this.chartLibrosMasPrestados.Size = new System.Drawing.Size(396, 267);
             this.chartLibrosMasPrestados.TabIndex = 4;
             this.chartLibrosMasPrestados.Text = "Libros Mas Prestados";
-            title6.Name = "Title1";
-            title6.Text = "Libros mas Prestados";
-            this.chartLibrosMasPrestados.Titles.Add(title6);
+            title14.Name = "Title1";
+            title14.Text = "Libros mas Prestados";
+            this.chartLibrosMasPrestados.Titles.Add(title14);
             // 
             // btnEliminarLibro
             // 
             this.btnEliminarLibro.BackColor = System.Drawing.Color.Red;
             this.btnEliminarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarLibro.Location = new System.Drawing.Point(415, 367);
+            this.btnEliminarLibro.Location = new System.Drawing.Point(458, 367);
             this.btnEliminarLibro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminarLibro.Name = "btnEliminarLibro";
             this.btnEliminarLibro.Padding = new System.Windows.Forms.Padding(5);
@@ -219,7 +220,7 @@
             this.btnEditarLibro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditarLibro.Name = "btnEditarLibro";
             this.btnEditarLibro.Padding = new System.Windows.Forms.Padding(5);
-            this.btnEditarLibro.Size = new System.Drawing.Size(146, 46);
+            this.btnEditarLibro.Size = new System.Drawing.Size(167, 46);
             this.btnEditarLibro.TabIndex = 2;
             this.btnEditarLibro.Text = "Guardar cambios";
             this.btnEditarLibro.UseVisualStyleBackColor = true;
@@ -402,7 +403,7 @@
             // btnLimpiarUsuario
             // 
             this.btnLimpiarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarUsuario.Location = new System.Drawing.Point(296, 331);
+            this.btnLimpiarUsuario.Location = new System.Drawing.Point(338, 330);
             this.btnLimpiarUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLimpiarUsuario.Name = "btnLimpiarUsuario";
             this.btnLimpiarUsuario.Padding = new System.Windows.Forms.Padding(5);
@@ -415,7 +416,7 @@
             // btnDevolver
             // 
             this.btnDevolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDevolver.Location = new System.Drawing.Point(839, 331);
+            this.btnDevolver.Location = new System.Drawing.Point(858, 329);
             this.btnDevolver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDevolver.Name = "btnDevolver";
             this.btnDevolver.Padding = new System.Windows.Forms.Padding(5);
@@ -428,11 +429,11 @@
             // btnPrestar
             // 
             this.btnPrestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrestar.Location = new System.Drawing.Point(670, 331);
+            this.btnPrestar.Location = new System.Drawing.Point(670, 329);
             this.btnPrestar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnPrestar.Name = "btnPrestar";
             this.btnPrestar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnPrestar.Size = new System.Drawing.Size(168, 45);
+            this.btnPrestar.Size = new System.Drawing.Size(182, 45);
             this.btnPrestar.TabIndex = 5;
             this.btnPrestar.Text = "Registrar Préstamo";
             this.btnPrestar.UseVisualStyleBackColor = true;
@@ -542,7 +543,7 @@
             // 
             this.btnEliminarUsuario.BackColor = System.Drawing.Color.Red;
             this.btnEliminarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarUsuario.Location = new System.Drawing.Point(457, 331);
+            this.btnEliminarUsuario.Location = new System.Drawing.Point(497, 330);
             this.btnEliminarUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEliminarUsuario.Name = "btnEliminarUsuario";
             this.btnEliminarUsuario.Padding = new System.Windows.Forms.Padding(5);
@@ -555,11 +556,11 @@
             // btnEditarUsuario
             // 
             this.btnEditarUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarUsuario.Location = new System.Drawing.Point(128, 329);
+            this.btnEditarUsuario.Location = new System.Drawing.Point(118, 329);
             this.btnEditarUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditarUsuario.Name = "btnEditarUsuario";
             this.btnEditarUsuario.Padding = new System.Windows.Forms.Padding(5);
-            this.btnEditarUsuario.Size = new System.Drawing.Size(150, 45);
+            this.btnEditarUsuario.Size = new System.Drawing.Size(171, 45);
             this.btnEditarUsuario.TabIndex = 2;
             this.btnEditarUsuario.Text = "Guardar Cambios";
             this.btnEditarUsuario.UseVisualStyleBackColor = true;

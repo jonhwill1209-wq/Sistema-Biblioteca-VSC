@@ -374,5 +374,36 @@ namespace BibliotecaUDB_V2
         }
 
         #endregion
+
+        private void btnDocumentacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Nombre exacto de tu archivo PDF
+                string nombreArchivo = "Manual_Usuario_Biblioteca.pdf";
+
+                // Combinamos la ruta de ejecución con el nombre del archivo
+                string rutaPdf = System.IO.Path.Combine(Application.StartupPath, nombreArchivo);
+
+                if (System.IO.File.Exists(rutaPdf))
+                {
+                    // Iniciamos el proceso para abrir el PDF con el visor predeterminado del sistema
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(rutaPdf)
+                    {
+                        UseShellExecute = true
+                    });
+                }
+                else
+                {
+                    MessageBox.Show("El manual en PDF no se encuentra en la carpeta raíz del programa.\n\n" +
+                                    "Asegúrese de que el archivo 'Manual_Usuario_Biblioteca.pdf' esté junto al ejecutable.",
+                                    "Documentación no encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al intentar abrir el PDF: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
