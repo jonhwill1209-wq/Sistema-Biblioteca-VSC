@@ -379,7 +379,7 @@ namespace BibliotecaUDB_V2
         {
             try
             {
-                // Nombre exacto de tu archivo PDF
+                // Nombre exacto archivo PDF
                 string nombreArchivo = "Manual_Usuario_Biblioteca.pdf";
 
                 // Combinamos la ruta de ejecución con el nombre del archivo
